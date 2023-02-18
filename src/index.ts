@@ -89,6 +89,10 @@ main(client, pricefeeds);
 const app = express();
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('OK')
+})
+
 app.get("/tv/config", async (req, res) => {
   const response = {
     supported_resolutions: Object.keys(resolutions),
